@@ -12,9 +12,11 @@
         "fideloper/proxy": "^4.0",
         "laracomponents/centrifuge-broadcaster": "^1.0",
         "laravel/framework": "5.7.*",
+        "laravel/socialite": "^4.1",
         "laravel/tinker": "^1.0",
         "mll-lab/laravel-graphql-playground": "^0.3.3",
-        "nuwave/lighthouse": "^2.6"
+        "nuwave/lighthouse": "^2.6",
+        "sl4mmer/phpcent":"dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

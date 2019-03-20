@@ -21,3 +21,20 @@
     </div>
 </div>
 @endsection
+@section('javascript')
+    <script>
+
+        var centrifuge = new Centrifuge('ws://localhost:8569/connection/websocket');
+        // var centrifuge = new Centrifuge('http://centrifugo:8000/connection/sockjs', {
+        //     sockjsTransports: ["websocket", "xhr-streaming"]
+        // });
+        centrifuge.setToken('<?php echo $token; ?>');
+        centrifuge.subscribe("news", function(message) {
+            console.log(message.data.message);
+        });
+        centrifuge.disconnect("news", function(message) {
+            console.log(message);
+        });
+        centrifuge.connect();
+    </script>
+@endsection

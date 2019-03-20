@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $client = new \phpcent\Client("http://centrifugo:8000/api");
+
+        $client->setApiKey("potato");
+  $token = $client->setSecret("potato")->generateConnectionToken(1);
+
+       $client->publish("news", ["message" => "Hello Everybody"]);
+
+        return view('home',compact('token'));
     }
 }
